@@ -101,7 +101,7 @@ const Phonebook = () => {
 
         numberService
             .deletedItem(id).then(r => {
-            if (r.status === 200) {
+            if (r.status === 204) {
                 setPersons(persons.filter(person => person.id !== id));
                 setSuccessfulDeleteMessage(`Person successfully deleted.`)
 
