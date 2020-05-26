@@ -10,7 +10,7 @@ const Form = ({ addPerson, newName, handleNameChange,
             <div>
                 Name:  <FormInput value={newName} changeHandler={handleNameChange} type="text" />
                 <br/>
-                Phone: <FormInput value={newPhone} changeHandler={handlePhoneChange} type="number"/>
+                Phone: <FormInput value={newPhone} changeHandler={handlePhoneChange} type="text"/>
             </div>
             <div>
                 <br/>

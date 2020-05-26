@@ -15,6 +15,7 @@ const Phonebook = () => {
     const [successfulDeleteMessage, setSuccessfulDeleteMessage] = useState(null);
     const [successfulAddMessage, setSuccessfulAddMessage] = useState(null);
     const [successfulEditMessage, setSuccessfulEditMessage] = useState(null);
+    const [errorMessage, setErrorMessage] = useState(null);
 
     const handleNameChange = (event) => setNewName(event.target.value);
     const handlePhoneChange = (event) => setNewPhone(event.target.value);
@@ -62,6 +63,13 @@ const Phonebook = () => {
                     setTimeout(() => {
                         setSuccessfulAddMessage(null);
                     }, 3000)
+                })
+                .catch(error => {
+                    console.log(error);
+                    setErrorMessage(`VALIDATION ERROR, Ensure that length of name > 3, phone length > 7 and name is unique.`);
+                    setTimeout(() => {
+                        setErrorMessage(null);
+                    }, 5000);
                 });
         } else {
 
@@ -120,6 +128,7 @@ const Phonebook = () => {
     return (
         <div>
             <Filter filterChange={handlePersonFilter} value={personFilter} />
+            <Notification message={errorMessage}/>
             <Header title='Add a new: ' />
             <Notification message={successfulAddMessage} />
             <Notification message={successfulEditMessage} />
