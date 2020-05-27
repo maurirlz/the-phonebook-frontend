@@ -52,6 +52,8 @@ const Phonebook = () => {
         .create(newPerson)
         .then((returnedPerson) => {
           setPersons(persons.concat(returnedPerson));
+          setNewName(' ');
+          setNewPhone(' ');
           setSuccessfulAddMessage(
             'Number successfully added.',
           );

@@ -1,13 +1,10 @@
 import React from 'react';
 import Phonebook from './components/Phonebook';
 
-const App = () => {
+const App = () => (
+  <>
+    <Phonebook />
+  </>
+);
 
-    return (
-        <>
-            <Phonebook />
-        </>
-    )
-}
-
-export default App
+export default App;
